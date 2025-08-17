@@ -51,19 +51,19 @@ class PyCyberSuiteGUI(tk.Tk):
     # --- Tabs ---
     def _auth_tab(self, nb):
         f = ttk.Frame(nb); nb.add(f, text="Auth")
-        tk.Label(f, text="Username").grid(row=0, column=0, sticky="e")
+        tk.Label(f, text="Name").grid(row=0, column=0, sticky="e")
         tk.Label(f, text="Password").grid(row=1, column=0, sticky="e")
         self.auth_user = tk.Entry(f); self.auth_user.grid(row=0, column=1)
         self.auth_pass = tk.Entry(f, show="*"); self.auth_pass.grid(row=1, column=1)
-        ttk.Button(f, text="Register", command=self.register_feature).grid(row=2, column=0, pady=4)
-        ttk.Button(f, text="Login", command=self._login).grid(row=2, column=1, pady=4)
-        self.auth_status = tk.Label(f, text="", fg="blue"); self.auth_status.grid(row=3, column=0, columnspan=2)
+        ttk.Button(f, text="Sign Up", command=self.register_feature).grid(row=2, column=0, pady=4)
+        ttk.Button(f, text="Sign In", command=self._login).grid(row=2, column=1, pady=4)
+        self.auth_status = tk.Label(f, text="", fg="green"); self.auth_status.grid(row=3, column=0, columnspan=2)
 
     def _scanner_tab(self, nb):
-        f = ttk.Frame(nb); nb.add(f, text="Network Scanner")
-        tk.Label(f, text="Base IP (e.g., 192.168.1)").grid(row=0, column=0, sticky="e")
-        tk.Label(f, text="Range start").grid(row=1, column=0, sticky="e")
-        tk.Label(f, text="Range end").grid(row=2, column=0, sticky="e")
+        f = ttk.Frame(nb); nb.add(f, text="Internet Scanner")
+        tk.Label(f, text="IP").grid(row=0, column=0, sticky="e")
+        tk.Label(f, text="Start Range").grid(row=1, column=0, sticky="e")
+        tk.Label(f, text="End Range").grid(row=2, column=0, sticky="e")
         self.base_ip = tk.Entry(f); self.base_ip.insert(0, "192.168.1"); self.base_ip.grid(row=0, column=1)
         self.range_start = tk.Entry(f); self.range_start.insert(0, "1"); self.range_start.grid(row=1, column=1)
         self.range_end = tk.Entry(f); self.range_end.insert(0, "10"); self.range_end.grid(row=2, column=1)
